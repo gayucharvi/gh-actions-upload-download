@@ -25,13 +25,13 @@ jobs:
          Test end-to-end by uploading two artifacts and then downloading them
       - name: Create artifact files
         run: |
-          mkdir build
+          mkdir artifacts-down
           # Upload a single file artifact
       - name: 'Upload artifact #1'
         uses: actions/upload-artifact@v4
         with:
           name: 'Artifact-A'
-          # path: build
+          path: artifacts-down
         
       # - uses: hashicorp/setup-terraform@v2
       # - name: Terraform init
