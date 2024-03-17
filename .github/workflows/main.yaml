@@ -20,6 +20,8 @@ jobs:
           aws-region: ap-south-1
       - name: Npm install
         run: npm install
+      - name: Compile
+        run: npm run build  
       # - uses: hashicorp/setup-terraform@v2
       # - name: Terraform init
       #   id: init
