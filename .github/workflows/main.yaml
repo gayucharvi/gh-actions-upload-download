@@ -18,10 +18,20 @@ jobs:
       #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           
           # aws-region: ap-south-1
-      - name: Npm install
-        run: npm install
+      - name: Install dependencies
+        run: npm ci
+
       - name: Compile
-        run: npm run build  
+        run: npm run build
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Format
+        run: npm run format-check
+
+      - name: Test
+        run: npm run test
          Test end-to-end by uploading two artifacts and then downloading them
       - name: Create artifact files
         run: |
