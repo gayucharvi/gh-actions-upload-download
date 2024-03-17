@@ -22,16 +22,16 @@ jobs:
         run: npm install
       - name: Compile
         run: npm run build  
-         # Test end-to-end by uploading two artifacts and then downloading them
-      # - name: Create artifact files
-      #   run: |
-      #     mkdir -p path/to/dir-1
-      #     # Upload a single file artifact
+         Test end-to-end by uploading two artifacts and then downloading them
+      - name: Create artifact files
+        run: |
+          mkdir build
+          # Upload a single file artifact
       - name: 'Upload artifact #1'
         uses: actions/upload-artifact@v4
         with:
           name: 'Artifact-A'
-          # path: ./build
+          # path: build
         
       # - uses: hashicorp/setup-terraform@v2
       # - name: Terraform init
