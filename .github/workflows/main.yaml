@@ -7,10 +7,10 @@ jobs:
   deploy_lambda:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: "16"
+          node-version: 20.x
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -28,7 +28,7 @@ jobs:
           mkdir -p path/to/dir-1
           # Upload a single file artifact
       - name: 'Upload artifact #1'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: 'Artifact-A'
           path: path/to/dir-1/file1.txt    
